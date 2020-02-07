@@ -2,14 +2,13 @@
 import rospy
 import math
 import tf
-import geometry_msgs.msg
 
 # ROS messages
 from std_msgs.msg import String, Bool
 from geometry_msgs.msg import Point, Pose, Twist
 from nav_msgs.msg import Odometry
 
-# Control Class
+# Class
 class mobile_waypoint_control(object):
     def __init__(self):
         # waypoint control state
@@ -23,7 +22,7 @@ class mobile_waypoint_control(object):
     
         # Control parameters
         self.FWD_K = 0.3
-        self.ANG_K = 0.8
+        self.ANG_K = 0.5
         self.MAX_LIN_VEL = 0.5
         self.MAX_ANG_VEL = 1.0
         self.FWD_THRES = 0.1
@@ -40,7 +39,7 @@ class mobile_waypoint_control(object):
         rospy.init_node('waypoint_control')
         self.freq = 10
         self.rate = rospy.Rate(self.freq)
-    
+
         # Publishers
         self.vel_pub = rospy.Publisher('cmd_vel', Twist, queue_size = 10)
         self.reached_pub = rospy.Publisher('waypoint/reached', Point, queue_size = 10)

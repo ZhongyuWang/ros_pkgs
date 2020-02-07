@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 import rospy
 import math
-
-# TF libraries
 import tf
 
 # ROS messages

@@ -1,4 +1,5 @@
 <launch>
+  <node pkg="waypoint_nav" type="waypoints_handler.py" name="waypoints_handler"/>
   <node pkg="waypoint_nav" type="arcore_localization.py" name="arcore_localization">
     <remap from="arcore/robot_odom" to="robot_odom"/>
   </node>
