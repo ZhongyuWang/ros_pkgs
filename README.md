@@ -1,2 +1,4 @@
 # ros_pkgs
-ROS1 packages
+A number of ROS packages
+
+* waypoint_nav: Drive robot through a set of waypoints.
