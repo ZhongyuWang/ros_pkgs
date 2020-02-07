@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="waypoint_nav" type="arcore_localization.py" name="arcore_localization">
+    <remap from="arcore/robot_odom" to="robot_odom"/>
+  </node>
+  <node pkg="waypoint_nav" type="mobile_waypoint_control.py" name="mobile_waypoint_control"/>
+</launch>
